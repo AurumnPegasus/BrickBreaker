@@ -24,10 +24,10 @@ class Ball:
         elif not self.release:
             if movement == 'a':
                 self.prev_X = self.X
-                self.X -= 1
+                self.X -= PADDLE_V
             elif movement == 'd':
                 self.prev_X = self.X
-                self.X += 1
+                self.X += PADDLE_V
 
     def location(self):
         return self.X, self.Y, self.prev_X, self.prev_Y
