@@ -103,10 +103,52 @@ class Main:
         self.pattern[Y] = r
 
         for i in range(self.W):
-            print(CURSOR % (prev_Y, i), self.pattern[prev_Y][i], end='', sep='', flush=True)
+            if self.pattern[prev_Y][i] == '+':
+                print(BRICK_ONE_COLOR, sep='', end='')
+                print(CURSOR % (prev_Y, i), self.pattern[prev_Y][i], end='', sep='', flush=True)
+                print(Style.RESET_ALL, end='', sep='')
+            elif self.pattern[prev_Y][i] == '-':
+                print(BRICK_TWO_COLOR, sep='', end='')
+                print(CURSOR % (prev_Y, i), self.pattern[prev_Y][i], end='', sep='', flush=True)
+                print(Style.RESET_ALL, end='', sep='')
+            elif self.pattern[prev_Y][i] == '/':
+                print(BRICK_THREE_COLOR, sep='', end='')
+                print(CURSOR % (prev_Y, i), self.pattern[prev_Y][i], end='', sep='', flush=True)
+                print(Style.RESET_ALL, end='', sep='')
+            elif self.pattern[prev_Y][i] == '#':
+                print(BRICK_FOUR_COLOR, sep='', end='')
+                print(CURSOR % (prev_Y, i), self.pattern[prev_Y][i], end='', sep='', flush=True)
+                print(Style.RESET_ALL, end='', sep='')
+            elif self.pattern[prev_Y][i] == '*':
+                print(BRICK_FIVE_COLOR, sep='', end='')
+                print(CURSOR % (prev_Y, i), self.pattern[prev_Y][i], end='', sep='', flush=True)
+                print(Style.RESET_ALL, end='', sep='')
+            else:
+                print(CURSOR % (prev_Y, i), self.pattern[prev_Y][i], end='', sep='', flush=True) 
         
         for i in range(self.W):
-            print(CURSOR % (Y, i), self.pattern[Y][i], end='', sep='', flush=True)
+            if self.pattern[Y][i] == '+':
+                print(BRICK_ONE_COLOR, sep='', end='')
+                print(CURSOR % (Y, i), self.pattern[Y][i], end='', sep='', flush=True)
+                print(Style.RESET_ALL, end='', sep='')
+            elif self.pattern[Y][i] == '-':
+                print(BRICK_TWO_COLOR, sep='', end='')
+                print(CURSOR % (Y, i), self.pattern[Y][i], end='', sep='', flush=True)
+                print(Style.RESET_ALL, end='', sep='')
+            elif self.pattern[Y][i] == '/':
+                print(BRICK_THREE_COLOR, sep='', end='')
+                print(CURSOR % (Y, i), self.pattern[Y][i], end='', sep='', flush=True)
+                print(Style.RESET_ALL, end='', sep='')
+            elif self.pattern[Y][i] == '#':
+                print(BRICK_FOUR_COLOR, sep='', end='')
+                print(CURSOR % (Y, i), self.pattern[Y][i], end='', sep='', flush=True)
+                print(Style.RESET_ALL, end='', sep='')
+            elif self.pattern[Y][i] == '*':
+                print(BRICK_FIVE_COLOR, sep='', end='')
+                print(CURSOR % (Y, i), self.pattern[Y][i], end='', sep='', flush=True)
+                print(Style.RESET_ALL, end='', sep='')
+            else:
+                print(CURSOR % (Y, i), self.pattern[Y][i], end='', sep='', flush=True) 
 
     def remove_brick(self, arg, temp_x, temp_y):
         hp = 0
@@ -164,8 +206,7 @@ class Main:
                 print(CURSOR % (temp_y, i), self.pattern[temp_y][i], end='', sep='', flush=True)
                 print(Style.RESET_ALL, end='', sep='')
             else:
-                print(CURSOR % (temp_y, i), self.pattern[temp_y][i], end='', sep='',)
-                
+                print(CURSOR % (temp_y, i), self.pattern[temp_y][i], end='', sep='',)     
             
     def update_time(self):
         self.time += 0.1
