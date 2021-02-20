@@ -1,19 +1,26 @@
+# Contains all constants used in the game, can be changed to changed parts of the game
+
+
 TIMEOUT=0.1
 
 X_WALL_LEFT=15
 X_WALL_RIGHT=15
 
+# Do NOT change, will require changes in the code
 Y_WALL=2
 
 PADDLE_LENGTH=16
-PADDLE_THICKNESS=2
-PADDLE_COLOR='\033[48;2;77;47;47m'
 
+# Do Not change, will require changes in the code
+PADDLE_THICKNESS=2
+
+PADDLE_COLOR='\033[48;2;77;47;47m'
 PADDLE_V=2
 
 CURSOR='\033[%d;%dH'
 
-MAIN_LOOP=1000
+# Uncomment the line below for testing purposes
+# MAIN_LOOP=1000
 
 BALL='●'
 Y_VELOCITY=1
